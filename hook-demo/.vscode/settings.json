@@ -1,0 +1,6 @@
+{
+  "csscomb.preset": {},
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+ }
+}
