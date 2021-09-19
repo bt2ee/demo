@@ -2,31 +2,24 @@ class Koa {
   constructor() {
     this.middleware = [];
   }
-  use(middleware) {
-    this.middleware.push(middleware);
+  use(fn) {
+    this.middleware.push(fn);
     return this;
   }
   compose(middleware) {
-    return function (context, next) {
-      let index = -1;
+    return (ctx, next) => {
       return dispatch(0);
-
       function dispatch(i) {
-        index = i;
         let fn = middleware[i];
         if (i === middleware.length) next = null;
         if (!fn) return Promise.resolve();
-
-        return Promise.resolve(fn(context, dispatch.bind(null, i + 1)));
+        return Promise.resolve(fn(ctx, dispatch.bind(null, i + 1)));
       }
     };
   }
-  handleRequest(ctx, fnMiddleware) {
-    return fnMiddleware(ctx);
-  }
   test() {
     const fn = this.compose(this.middleware);
-    this.handleRequest(1, fn);
+    fn(1);
   }
 }
 
