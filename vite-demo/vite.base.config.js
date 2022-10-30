@@ -5,4 +5,23 @@ export default defineConfig({
     exclude: [] // 不进行依赖预构建
   },
   envPrefix: 'ENV', // vite 注入客户端环境变量前缀
+  css: { // css行为配置
+    modules: { // css 模块化覆盖
+      localsConvention: "dashes", // 转换类名；camelCase： 转成驼峰；camelCaseOnly: 只有驼峰；dashes: 转中划线；
+      scopeBehaviour: "local", // 配置当前模块化行为是全局还是模块化，local 开启模块化
+      generateScopedName: "[name]_[local]_[hash:S]", // 生成类名规则，依据 postcss
+      hashPrefix: '', // hash 前缀
+      globalModulePaths: [], // 不参与 css module 的文件路径
+    },
+    preprocessorOptions: { // 预处理器配置覆盖
+      less: {
+        math: "always",
+        globalVars: {
+          mainColor: "red" // webpack 中可以在 less-loader 定义
+        }
+      },
+      sass: {}
+    },
+    devSourcemap: true, // sourceMap 索引
+  }
 })
