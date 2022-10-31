@@ -1,4 +1,6 @@
 import { count } from './counter'
-import './index.css'
+import './index.less'
+import './componentA'
+// import './index.css'
 
 console.log(count)
