@@ -1,4 +1,6 @@
+import postcssPresetEnv from "postcss-preset-env"
 import { defineConfig } from "vite"
+import path from 'path'
 
 export default defineConfig({
   optimizeDeps: {
@@ -23,5 +25,11 @@ export default defineConfig({
       sass: {}
     },
     devSourcemap: true, // sourceMap 索引
+    postcss: {
+      plugins: [postcssPresetEnv({
+        // 有一些全局变量需要记录提供编译
+        importFrom: path.resolve(__dirname, './variable.css')
+      })],
+    }
   }
 })

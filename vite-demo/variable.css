@@ -1,0 +1,4 @@
+/* 未来的css特性不会经过 less sass 处理，只能给postcss做降级 */
+:root {
+  --globalColor: lightblue;
+}

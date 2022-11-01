@@ -5,7 +5,8 @@
 }
 
 .footer-content {
-  width: 200px;
+  // 响应式布局，30%宽度，最小100px，最大200px
+  width: clamp(100px, 50%, 200px);
   height: 200px;
   background-color: var(--globalColor);
 }

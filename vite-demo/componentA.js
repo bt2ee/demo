@@ -1,4 +1,4 @@
-import componentACss from  "./componentA.module.css";
+import componentACss from  "./componentA.module.less";
 
 const div = document.createElement("div");
 

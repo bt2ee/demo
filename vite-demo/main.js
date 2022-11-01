@@ -1,5 +1,5 @@
 import { count } from './counter'
-import './index.less'
+import './variable.css'
 import './componentA'
 // import './index.css'
 
