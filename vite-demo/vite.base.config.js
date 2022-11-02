@@ -3,6 +3,11 @@ import { defineConfig } from "vite"
 import path from 'path'
 
 export default defineConfig({
+  resolve: {
+    alias: {
+      "@": './src'
+    }
+  },
   optimizeDeps: {
     exclude: [] // 不进行依赖预构建
   },
