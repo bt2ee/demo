@@ -36,5 +36,15 @@ export default defineConfig({
         importFrom: path.resolve(__dirname, './variable.css')
       })],
     }
-  }
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        assetFileNames: "[hash].[name].[ext]"
+      }
+    },
+    assetsInlineLimit: 4096, // 小于4kb转成 base64 字符
+    outDir: 'dist', // 打包别名
+    assetsDir: 'static', // 静态资源别名
+  },
 })
