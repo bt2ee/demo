@@ -11,10 +11,10 @@ const envResolver = {
 }
 
 export default defineConfig(({ command, mode }) => {
-  console.log(process, 'process')
+  // console.log(process, 'process')
   // vite 不是直接注入，但是提供手动加载方法 loadEnv
   const env = loadEnv(mode, process.cwd(), '')
-  console.log(env, '===env')
+  // console.log(env, '===env')
   return envResolver[command]()
 })
 

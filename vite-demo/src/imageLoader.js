@@ -1,4 +1,4 @@
-import imageUrl from './assets/images/aaa.png'
+import imageUrl from '@assets/images/aaa.png'
 
 const img = document.createElement('img')
 

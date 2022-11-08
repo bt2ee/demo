@@ -1,7 +1,8 @@
 import postcssPresetEnv from "postcss-preset-env"
 import { defineConfig } from "vite"
 import path from 'path'
-import { ViteAliases } from "vite-aliases"
+// import { ViteAliases } from "vite-aliases"
+import MyViteAliases from './plugins/ViteAliases'
 
 export default defineConfig({
   // resolve: {
@@ -50,6 +51,7 @@ export default defineConfig({
     emptyOutDir: true, // 默认 true，清除输出目录所有文件
   },
   plugins: [
-    ViteAliases(), // 自动生成别名
+    MyViteAliases(),
+    // ViteAliases(), // 自动生成别名
   ]
 })
