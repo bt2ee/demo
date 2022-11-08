@@ -1,13 +1,14 @@
 import postcssPresetEnv from "postcss-preset-env"
 import { defineConfig } from "vite"
 import path from 'path'
+import { ViteAliases } from "vite-aliases"
 
 export default defineConfig({
-  resolve: {
-    alias: {
-      "@": './src'
-    }
-  },
+  // resolve: {
+  //   alias: {
+  //     "@": './src'
+  //   }
+  // },
   optimizeDeps: {
     exclude: [] // 不进行依赖预构建
   },
@@ -46,5 +47,9 @@ export default defineConfig({
     assetsInlineLimit: 4096, // 小于4kb转成 base64 字符
     outDir: 'dist', // 打包别名
     assetsDir: 'static', // 静态资源别名
+    emptyOutDir: true, // 默认 true，清除输出目录所有文件
   },
+  plugins: [
+    ViteAliases(), // 自动生成别名
+  ]
 })
