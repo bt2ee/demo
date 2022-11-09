@@ -3,6 +3,8 @@ import { defineConfig } from "vite"
 import path from 'path'
 // import { ViteAliases } from "vite-aliases"
 import MyViteAliases from './plugins/ViteAliases'
+// import { createHtmlPlugin } from 'vite-plugin-html'
+import CreateHtmlPlugin from "./plugins/CreateHtmlPlugin"
 
 export default defineConfig({
   // resolve: {
@@ -53,5 +55,12 @@ export default defineConfig({
   plugins: [
     MyViteAliases(),
     // ViteAliases(), // 自动生成别名
+    CreateHtmlPlugin({
+      inject: {
+        data: {
+          title: "首页"
+        }
+      }
+    })
   ]
 })
