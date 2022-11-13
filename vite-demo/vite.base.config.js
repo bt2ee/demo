@@ -5,6 +5,8 @@ import path from 'path'
 import MyViteAliases from './plugins/ViteAliases'
 // import { createHtmlPlugin } from 'vite-plugin-html'
 import CreateHtmlPlugin from "./plugins/CreateHtmlPlugin"
+import VitePluginMock from './plugins/VitePluginMock'
+import { viteMockServe } from "vite-plugin-mock";
 
 export default defineConfig({
   // resolve: {
@@ -61,6 +63,8 @@ export default defineConfig({
           title: "首页"
         }
       }
-    })
+    }),
+    // viteMockServe()
+    VitePluginMock()
   ]
 })
