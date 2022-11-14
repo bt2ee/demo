@@ -7,6 +7,7 @@ import MyViteAliases from './plugins/ViteAliases'
 import CreateHtmlPlugin from "./plugins/CreateHtmlPlugin"
 import VitePluginMock from './plugins/VitePluginMock'
 import { viteMockServe } from "vite-plugin-mock";
+import checker from "vite-plugin-checker"
 
 export default defineConfig({
   // resolve: {
@@ -65,6 +66,7 @@ export default defineConfig({
       }
     }),
     // viteMockServe()
-    VitePluginMock()
+    VitePluginMock(),
+    // checker({ typescript: true }) ts检查
   ]
 })
