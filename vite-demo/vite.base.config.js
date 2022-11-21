@@ -8,6 +8,7 @@ import CreateHtmlPlugin from "./plugins/CreateHtmlPlugin"
 import VitePluginMock from './plugins/VitePluginMock'
 import { viteMockServe } from "vite-plugin-mock";
 import checker from "vite-plugin-checker"
+import viteCompression from 'vite-plugin-compression'
 
 export default defineConfig({
   // resolve: {
@@ -68,5 +69,6 @@ export default defineConfig({
     // viteMockServe()
     VitePluginMock(),
     // checker({ typescript: true }) ts检查
+    viteCompression() // gzip 压缩，体积不大不建议使用，浏览器解压需要一定时间
   ]
 })
